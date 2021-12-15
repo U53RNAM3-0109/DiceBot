@@ -87,4 +87,4 @@ def save_channel_ids(filename):
 
 ##########################
 
-client.run('OTA0MzU2ODU1NDk5ODc4NDgw.YX6V9A.BEwBNu4_YW9xgq2XFCrcaI3Bci4')
+client.run('TOKEN')
