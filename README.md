@@ -6,3 +6,5 @@ but I'm not clever enough to find out permissions, so I've got them set to my ow
 You can change this to a list of other valid IDs yourself.
 
 This uses environment variables to store a token, as this was created on replit, where it was publicly available. You can change the token to whatever in line 5 of main.py
+
+It follows dice rolling rules for a specific ttrpg, so don't be surprised if something unexpected happens.
