@@ -2,7 +2,7 @@ import random
 import roll_vals
 
 
-def roll(n, max, mode='reg',reg):
+def roll(reg, n, max, mode='reg'):
     n = int(n)
     max = int(max)
     success = 0
@@ -76,14 +76,14 @@ def extra_check():
         return '(No extra dice)'
 
 
-def main(string):  #input cleaning and checking
+def main(reg, string):  #input cleaning and checking
     reset_vals()
     if string.startswith('exc'):
         string = string.replace('exc', '').split('d')
-        return roll(string[0], string[1], 'exc')
+        return roll(reg, string[0], string[1], 'exc')
     elif string.startswith('ex'):
         string = string.replace('ex', '').split('d')
-        return roll(string[0], string[1], 'ex')
+        return roll(reg, string[0], string[1], 'ex')
     else:
         string = string.split('d')
-        return roll(string[0], string[1], 'reg')
+        return roll(reg, string[0], string[1], 'reg')
