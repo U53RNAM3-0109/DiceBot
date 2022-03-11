@@ -2,7 +2,7 @@ import random
 import roll_vals
 
 
-def roll(n, max, mode='reg'):
+def roll(n, max, mode='reg',reg):
     n = int(n)
     max = int(max)
     success = 0
@@ -40,10 +40,17 @@ def roll(n, max, mode='reg'):
             success += 1
 
         #Returning all the values
-    return f"""You rolled: {roll_vals.rolls}
-{extra_check()}
-Total: {roll_vals.total}
-{success} successes!"""
+    if reg == 'n':
+        return f"""You rolled: {roll_vals.rolls}
+    {extra_check()}
+    Total: {roll_vals.total}
+    {success} successes!"""
+    
+    else:
+        return f"""You rolled: {roll_vals.rolls}
+    {extra_check()}
+    Total: {roll_vals.total}"""
+    
 
 
 def explode(max):
