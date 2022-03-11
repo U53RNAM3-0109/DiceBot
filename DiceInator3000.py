@@ -65,10 +65,15 @@ async def help(ctx):
 async def roll(ctx, string: str):
     print_log(ctx, '>roll')
     print(string)
+    if string.startswith("n "):
+        classic = False
+        string = string[6::]
+    else:
+        classic = True
     string = message_clean(string)
 
     try:
-        result = roller.main(string)
+        result = roller.main(string,classic)
         print(result)
         await ctx.send(result)
     except:
@@ -101,5 +106,5 @@ def print_log(ctx, command):
 
 
 def message_clean(message):
-    messsage = message.replace("'","").replace('"','').replace("(","").replace(")", "")
+    messsage = message.replace("'","").replace('"','').replace("(","").replace(")", "").strip()
     return message.lower()
