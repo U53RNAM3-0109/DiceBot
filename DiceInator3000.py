@@ -6,6 +6,7 @@ import datetime
 import roller
 
 admin_ids = [384729201544134659]
+#Using own discord id, as I currently do not know how to check for permissions - will update
 
 #The following will write any error logs to a file.
 logger = logging.getLogger('discord')
