@@ -2,7 +2,7 @@ import random
 import roll_vals
 
 
-def roll(n, max, mode='reg'):
+def roll(reg, n, max, mode='reg'):
     n = int(n)
     max = int(max)
     success = 0
@@ -40,10 +40,17 @@ def roll(n, max, mode='reg'):
             success += 1
 
         #Returning all the values
-    return f"""You rolled: {roll_vals.rolls}
-{extra_check()}
-Total: {roll_vals.total}
-{success} successes!"""
+    if reg == 'n':
+        return f"""You rolled: {roll_vals.rolls}
+    {extra_check()}
+    Total: {roll_vals.total}
+    {success} successes!"""
+    
+    else:
+        return f"""You rolled: {roll_vals.rolls}
+    {extra_check()}
+    Total: {roll_vals.total}"""
+    
 
 
 def explode(max):
@@ -69,14 +76,14 @@ def extra_check():
         return '(No extra dice)'
 
 
-def main(string):  #input cleaning and checking
+def main(reg, string):  #input cleaning and checking
     reset_vals()
     if string.startswith('exc'):
         string = string.replace('exc', '').split('d')
-        return roll(string[0], string[1], 'exc')
+        return roll(reg, string[0], string[1], 'exc')
     elif string.startswith('ex'):
         string = string.replace('ex', '').split('d')
-        return roll(string[0], string[1], 'ex')
+        return roll(reg, string[0], string[1], 'ex')
     else:
         string = string.split('d')
-        return roll(string[0], string[1], 'reg')
+        return roll(reg, string[0], string[1], 'reg')
